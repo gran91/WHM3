@@ -1,0 +1,19 @@
+.toast-success {
+    > div{
+         background-color:#32db64!important;
+     }
+  }
+  .toast-warning {
+    > div{
+         background-color:#dbd832!important;
+     }
+  }
+  .toast-error {
+    > div{
+         background-color:#db3232!important;
+     }
+  }
+
+  ion-card.cards-primary ion-card-header {
+    color: map-get($colors, primary);
+  }

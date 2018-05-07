@@ -1,0 +1,14 @@
+{
+  "name": "whm3",
+  "app_id": "",
+  "type": "ionic-angular",
+  "proxies": [
+    {
+      "path": "/api",
+      "proxyUrl": "http://localhost:40001"
+    }
+  ],
+  "integrations": {
+    "cordova": {}
+  }
+}

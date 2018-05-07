@@ -1,0 +1,39 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>
+      Location transfer
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+<ion-content padding id="locationtransfer">
+  <form [formGroup]="locationForm" (ngSubmit)="onSubmit(locationForm.value)">
+    <ion-item>
+      <ion-label floating>Warehouse</ion-label>
+      <ion-input clearInput formControlName="warehouse" type="text"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label floating>Location</ion-label>
+      <ion-input clearInput formControlName="location" type="text"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label floating>Item</ion-label>
+      <ion-input #focusinput clearInput formControlName="item" type="text"></ion-input>
+    </ion-item>
+    <ion-item *ngIf="!isCollapsed">
+      <ion-label floating>Lot</ion-label>
+      <ion-input clearInput formControlName="lot" type="text"></ion-input>
+    </ion-item>
+    <ion-item *ngIf="!isCollapsed">
+      <ion-label floating>Container</ion-label>
+      <ion-input clearInput formControlName="container" type="text"></ion-input>
+    </ion-item>
+    <button color="light" type="button" ion-button block ion-button small block on-click="toggle()">
+      <ion-icon name="arrow-down" *ngIf="isCollapsed"></ion-icon>
+      <ion-icon name="arrow-up" *ngIf="!isCollapsed"></ion-icon>
+    </button>
+    <button [disabled]="!locationForm.valid" type="submit" ion-button block>Validate</button>
+  </form>
+</ion-content>

@@ -1,0 +1,17 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Put Away</ion-title>
+  </ion-navbar>
+</ion-header>
+<ion-content padding id="putaway">
+  <form [formGroup]="putawayForm" (ngSubmit)="onSubmit(putawayForm.value)">
+    <ion-item>
+      <ion-label floating>Receipt Number</ion-label>
+      <ion-input clearInput formControlName="receiptnumber" type="text"></ion-input>
+    </ion-item>
+    <button [disabled]="!putawayForm.valid" type="submit" ion-button block>Validate</button>
+  </form>
+</ion-content>
